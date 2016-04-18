@@ -20,7 +20,7 @@ class MonsterImg: UIImageView {
         playIdleAnimation()
     }
     
-    func playIdleAnimation() {
+    func playIdleAnimation () {
         self.image = UIImage(named: "idle (1)")
         
         self.animationImages = nil

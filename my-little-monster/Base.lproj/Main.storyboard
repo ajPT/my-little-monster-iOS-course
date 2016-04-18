@@ -125,6 +125,9 @@
                         <outlet property="food" destination="LGM-PW-rem" id="FIa-Z9-N2t"/>
                         <outlet property="heart" destination="zDI-0K-bfr" id="SKs-Dr-LJh"/>
                         <outlet property="monsterImg" destination="oNc-c9-xdB" id="b61-cp-ctu"/>
+                        <outlet property="skull1" destination="bv5-n4-4Ps" id="wRR-rZ-n4m"/>
+                        <outlet property="skull2" destination="zw9-dm-xqQ" id="SWn-Fl-csg"/>
+                        <outlet property="skull3" destination="HpE-CF-zly" id="5lk-5z-C8F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
