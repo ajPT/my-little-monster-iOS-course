@@ -9,13 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var monsterImg: MonsterImg!
-    @IBOutlet weak var heart: DragImg!
-    @IBOutlet weak var food: DragImg!
-    @IBOutlet weak var skull1: UIImageView!
-    @IBOutlet weak var skull2: UIImageView!
-    @IBOutlet weak var skull3: UIImageView!
     
     let DIM_ALPHA: CGFloat = 0.2
     let OPAQUE: CGFloat = 1.0
@@ -23,8 +16,40 @@ class ViewController: UIViewController {
     var monsterHappy = false
     var gameAudio: GameAudio!
     var currentItem: UInt32 = 0
-    
     var actualPenalties = 0
+
+    @IBOutlet weak var monsterImg: MonsterImg!
+    @IBOutlet weak var heart: DragImg!
+    @IBOutlet weak var food: DragImg!
+    @IBOutlet weak var skull1: UIImageView!
+    @IBOutlet weak var skull2: UIImageView!
+    @IBOutlet weak var skull3: UIImageView!
+    @IBOutlet weak var reanimateBtn: UIButton!
+    @IBOutlet weak var restartBtn: UIButton!
+    @IBOutlet weak var reanimateLbl: UILabel!
+    @IBOutlet weak var restartLbl: UILabel!
+    
+    @IBAction func onReanimatePressed(sender: AnyObject) {
+        food.hidden = false
+        heart.hidden = false
+        reanimateBtn.hidden = true
+        reanimateLbl.hidden = true
+        restartBtn.hidden = true
+        restartLbl.hidden = true
+        skull1.alpha = DIM_ALPHA
+        skull2.alpha = DIM_ALPHA
+        skull3.alpha = DIM_ALPHA
+        monsterImg.playIdleAnimation ()
+        gameAudio.playCaveMusicSound()
+        actualPenalties = 0
+        currentItem = 0
+        monsterHappy = false
+        startTimer()
+    }
+
+    @IBAction func onRestartPressed(sender: AnyObject) {
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +59,11 @@ class ViewController: UIViewController {
         
         food.dropTarget = monsterImg
         heart.dropTarget = monsterImg
+        
+        reanimateBtn.hidden = true
+        reanimateLbl.hidden = true
+        restartBtn.hidden = true
+        restartLbl.hidden = true
         
         skull1.alpha = DIM_ALPHA
         skull2.alpha = DIM_ALPHA
@@ -103,12 +133,17 @@ class ViewController: UIViewController {
     
     func gameOver() {
         timer.invalidate()
-        heart.alpha = DIM_ALPHA
-        food.alpha = DIM_ALPHA
+        heart.hidden = true
+        food.hidden = true
+        reanimateBtn.hidden = false
+        reanimateLbl.hidden = false
+        restartBtn.hidden = false
+        restartLbl.hidden = false
+        //heart.alpha = DIM_ALPHA
+        //food.alpha = DIM_ALPHA
         monsterImg.playDeathAnimation()
         gameAudio.playDeathSound()
     }
-    
     
 
 

@@ -1,11 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Nf3-nz-rwp">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Initial View Controller-->
+        <scene sceneID="5Vl-Hv-eDN">
+            <objects>
+                <viewController id="Nf3-nz-rwp" customClass="InitialViewController" customModule="my_little_monster" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ehG-wV-LTw"/>
+                        <viewControllerLayoutGuide type="bottom" id="al6-to-c6t"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="akN-3C-CbB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erq-eC-dDW">
+                                <rect key="frame" x="320" y="178" width="46" height="30"/>
+                                <state key="normal" title="START"/>
+                                <connections>
+                                    <action selector="doStuff:" destination="Nf3-nz-rwp" eventType="touchUpInside" id="7A4-g8-57c"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="showMonster" id="32e-aN-dhw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4lc-lL-jlS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-589" y="476"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -60,13 +90,6 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="idle (1)" translatesAutoresizingMaskIntoConstraints="NO" id="oNc-c9-xdB" customClass="MonsterImg" customModule="my_little_monster" customModuleProvider="target">
-                                <rect key="frame" x="-30" y="195" width="541" height="361"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="541" id="5wU-01-IgP"/>
-                                    <constraint firstAttribute="height" constant="361" id="FAZ-eq-KZb"/>
-                                </constraints>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" distribution="fillEqually" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="hUd-YG-HSK">
                                 <rect key="frame" x="155" y="109" width="290" height="98"/>
                                 <subviews>
@@ -79,6 +102,49 @@
                                 </subviews>
                                 <variation key="heightClass=compact" axis="vertical" spacing="50"/>
                             </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="idle (1)" translatesAutoresizingMaskIntoConstraints="NO" id="oNc-c9-xdB" customClass="MonsterImg" customModule="my_little_monster" customModuleProvider="target">
+                                <rect key="frame" x="89" y="264" width="423" height="282"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="282" id="sIM-v8-C5B"/>
+                                    <constraint firstAttribute="width" constant="423" id="xng-NN-lpO"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bBx-Pl-map">
+                                <rect key="frame" x="214" y="116" width="173" height="146"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ovc-EO-AiA">
+                                        <rect key="frame" x="0.0" y="0.0" width="173" height="63"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="63" id="0Gu-yH-gsU"/>
+                                            <constraint firstAttribute="width" constant="173" id="GjX-4q-rcx"/>
+                                        </constraints>
+                                        <state key="normal" image="reanimate"/>
+                                        <connections>
+                                            <action selector="onReanimatePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eUE-Qy-qsY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4A-tt-OCh">
+                                        <rect key="frame" x="0.0" y="83" width="173" height="63"/>
+                                        <state key="normal" image="restart"/>
+                                        <connections>
+                                            <action selector="onRestartPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n4r-Ps-YDN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <variation key="heightClass=compact" axis="horizontal"/>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Reanimate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNo-Os-sfJ">
+                                <rect key="frame" x="252" y="134" width="96" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Restart" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gp-bb-4o8">
+                                <rect key="frame" x="249" y="217" width="96" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -86,38 +152,66 @@
                             <constraint firstItem="eKQ-WT-Cs4" firstAttribute="centerY" secondItem="DMN-i3-N5t" secondAttribute="centerY" id="FBR-hb-LNk"/>
                             <constraint firstAttribute="trailing" secondItem="bGc-yE-Oqg" secondAttribute="trailing" id="Fee-iV-8Lh"/>
                             <constraint firstItem="hUd-YG-HSK" firstAttribute="top" secondItem="DMN-i3-N5t" secondAttribute="bottom" constant="20" id="GJe-N1-pgZ"/>
+                            <constraint firstItem="PNo-Os-sfJ" firstAttribute="centerX" secondItem="ovc-EO-AiA" secondAttribute="centerX" id="KvH-b1-aBB"/>
+                            <constraint firstItem="bBx-Pl-map" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LZL-P0-V5f"/>
                             <constraint firstAttribute="trailing" secondItem="yWq-LY-B8l" secondAttribute="trailing" id="LsP-pv-uao"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oNc-c9-xdB" secondAttribute="bottom" constant="54" id="N22-4m-8Wt"/>
                             <constraint firstItem="yWq-LY-B8l" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="NZV-OU-97C"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bGc-yE-Oqg" secondAttribute="bottom" id="Ncp-xV-FAm"/>
                             <constraint firstItem="DMN-i3-N5t" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="OOh-u4-mUw"/>
-                            <constraint firstItem="hUd-YG-HSK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="Ori-Yl-pyw"/>
                             <constraint firstItem="bGc-yE-Oqg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="QE4-5o-a8K"/>
+                            <constraint firstItem="H4A-tt-OCh" firstAttribute="centerY" secondItem="4gp-bb-4o8" secondAttribute="centerY" constant="3" id="Qgx-aZ-JSi"/>
                             <constraint firstItem="yWq-LY-B8l" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="SX1-bI-wR5"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yWq-LY-B8l" secondAttribute="bottom" id="VkM-6A-5ka"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oNc-c9-xdB" secondAttribute="bottom" constant="44" id="kCn-B8-HBf"/>
+                            <constraint firstAttribute="centerY" secondItem="bBx-Pl-map" secondAttribute="centerY" id="dtB-K8-pNU">
+                                <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                            </constraint>
+                            <constraint firstItem="oNc-c9-xdB" firstAttribute="top" secondItem="DMN-i3-N5t" secondAttribute="bottom" constant="-27" id="kiF-c4-LVh"/>
+                            <constraint firstItem="oNc-c9-xdB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lNN-UO-bc7"/>
+                            <constraint firstItem="bBx-Pl-map" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lSm-58-bIh"/>
                             <constraint firstItem="DMN-i3-N5t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ord-bS-bTm"/>
                             <constraint firstItem="hUd-YG-HSK" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="qRO-fx-wF9"/>
-                            <constraint firstItem="oNc-c9-xdB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-50" id="r1l-YT-tlj"/>
                             <constraint firstItem="hUd-YG-HSK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ra9-Ty-c5X"/>
+                            <constraint firstItem="hUd-YG-HSK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="tIL-Aw-o0R"/>
+                            <constraint firstAttribute="centerY" secondItem="bBx-Pl-map" secondAttribute="centerY" id="tSt-Sc-EIV">
+                                <variation key="heightClass=compact" constant="15"/>
+                                <variation key="heightClass=compact-widthClass=compact" constant="45"/>
+                                <variation key="heightClass=compact-widthClass=regular" constant="50"/>
+                            </constraint>
+                            <constraint firstItem="ovc-EO-AiA" firstAttribute="centerY" secondItem="PNo-Os-sfJ" secondAttribute="centerY" constant="3" id="tut-Fc-sPR"/>
+                            <constraint firstItem="bGc-yE-Oqg" firstAttribute="top" secondItem="hUd-YG-HSK" secondAttribute="bottom" constant="30" id="wJn-wW-pdR"/>
+                            <constraint firstItem="H4A-tt-OCh" firstAttribute="centerX" secondItem="4gp-bb-4o8" secondAttribute="centerX" id="xM1-35-jdg"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="GJe-N1-pgZ"/>
-                                <exclude reference="Ori-Yl-pyw"/>
                                 <exclude reference="qRO-fx-wF9"/>
                                 <exclude reference="ra9-Ty-c5X"/>
+                                <exclude reference="tIL-Aw-o0R"/>
+                                <exclude reference="LZL-P0-V5f"/>
+                                <exclude reference="dtB-K8-pNU"/>
+                                <exclude reference="lSm-58-bIh"/>
+                                <exclude reference="tSt-Sc-EIV"/>
+                                <exclude reference="kiF-c4-LVh"/>
+                                <exclude reference="wJn-wW-pdR"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="constraints">
-                                <include reference="Ori-Yl-pyw"/>
                                 <include reference="qRO-fx-wF9"/>
+                                <include reference="tIL-Aw-o0R"/>
+                                <include reference="LZL-P0-V5f"/>
+                                <include reference="tSt-Sc-EIV"/>
+                                <include reference="kiF-c4-LVh"/>
+                                <include reference="wJn-wW-pdR"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
                                 <include reference="GJe-N1-pgZ"/>
                                 <include reference="ra9-Ty-c5X"/>
+                                <include reference="dtB-K8-pNU"/>
+                                <include reference="lSm-58-bIh"/>
                             </mask>
                         </variation>
                     </view>
@@ -125,6 +219,10 @@
                         <outlet property="food" destination="LGM-PW-rem" id="FIa-Z9-N2t"/>
                         <outlet property="heart" destination="zDI-0K-bfr" id="SKs-Dr-LJh"/>
                         <outlet property="monsterImg" destination="oNc-c9-xdB" id="b61-cp-ctu"/>
+                        <outlet property="reanimateBtn" destination="ovc-EO-AiA" id="MxB-oS-1IF"/>
+                        <outlet property="reanimateLbl" destination="PNo-Os-sfJ" id="swM-QO-92f"/>
+                        <outlet property="restartBtn" destination="H4A-tt-OCh" id="FWj-SF-Uum"/>
+                        <outlet property="restartLbl" destination="4gp-bb-4o8" id="edq-T7-86t"/>
                         <outlet property="skull1" destination="bv5-n4-4Ps" id="wRR-rZ-n4m"/>
                         <outlet property="skull2" destination="zw9-dm-xqQ" id="SWn-Fl-csg"/>
                         <outlet property="skull3" destination="HpE-CF-zly" id="5lk-5z-C8F"/>
@@ -132,7 +230,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="245" y="305"/>
+            <point key="canvasLocation" x="245" y="476"/>
         </scene>
     </scenes>
     <resources>
@@ -140,8 +238,10 @@
         <image name="food" width="95" height="98"/>
         <image name="ground" width="1444" height="151"/>
         <image name="heart" width="95" height="98"/>
-        <image name="idle (1)" width="889" height="615"/>
+        <image name="idle (1)" width="271" height="239"/>
         <image name="livespanel" width="468" height="137"/>
+        <image name="reanimate" width="212" height="78"/>
+        <image name="restart" width="212" height="78"/>
         <image name="skull" width="95" height="98"/>
     </resources>
 </document>
