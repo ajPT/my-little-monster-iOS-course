@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     let DIM_ALPHA: CGFloat = 0.2
     let OPAQUE: CGFloat = 1.0
     var timer: NSTimer!
+    var monsterHappy = false
     
     var actualPenalties = 0
     
@@ -39,7 +40,12 @@ class ViewController: UIViewController {
     }
     
     func itemDroppedOnTarget() {
-        print("is Working!!!")
+        monsterHappy = true
+        startTimer()
+        food.alpha = DIM_ALPHA
+        heart.alpha = DIM_ALPHA
+        food.userInteractionEnabled = false
+        heart.userInteractionEnabled = false
     }
     
     func startTimer() {
@@ -52,24 +58,45 @@ class ViewController: UIViewController {
     
     func changeGameState() {
         
-        actualPenalties += 1
+        if !monsterHappy {
+            actualPenalties += 1
         
-        if actualPenalties == 1 {
-            skull1.alpha = OPAQUE
-        } else if actualPenalties == 2 {
-            skull2.alpha = OPAQUE
-        } else if actualPenalties >= 3 {
-            skull3.alpha = OPAQUE
-            gameOver()
-        } else {
-            skull1.alpha = DIM_ALPHA
-            skull2.alpha = DIM_ALPHA
-            skull3.alpha = DIM_ALPHA
+            if actualPenalties == 1 {
+                skull1.alpha = OPAQUE
+            } else if actualPenalties == 2 {
+                skull2.alpha = OPAQUE
+            } else if actualPenalties >= 3 {
+                skull3.alpha = OPAQUE
+                gameOver()
+            } else {
+                skull1.alpha = DIM_ALPHA
+                skull2.alpha = DIM_ALPHA
+                skull3.alpha = DIM_ALPHA
+            }
         }
+        
+        let rand = arc4random_uniform(2)
+        
+        if rand == 0 {
+            food.alpha = DIM_ALPHA
+            food.userInteractionEnabled = false
+            heart.alpha = OPAQUE
+            heart.userInteractionEnabled = true
+        } else {
+            heart.alpha = DIM_ALPHA
+            heart.userInteractionEnabled = false
+            food.alpha = OPAQUE
+            food.userInteractionEnabled = true
+        }
+        
+        monsterHappy = false
+        
     }
     
     func gameOver() {
         timer.invalidate()
+        heart.alpha = DIM_ALPHA
+        food.alpha = DIM_ALPHA
         monsterImg.playDeathAnimation()
     }
     
