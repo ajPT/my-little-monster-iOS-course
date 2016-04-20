@@ -21,11 +21,15 @@ class ViewController: UIViewController {
     let OPAQUE: CGFloat = 1.0
     var timer: NSTimer!
     var monsterHappy = false
+    var gameAudio: GameAudio!
     
     var actualPenalties = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        gameAudio = GameAudio()
+        gameAudio.playCaveMusicSound()
         
         food.dropTarget = monsterImg
         heart.dropTarget = monsterImg

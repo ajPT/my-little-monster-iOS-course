@@ -19,6 +19,7 @@
 		E0E837121CC7D5590066B154 /* death.wav in Resources */ = {isa = PBXBuildFile; fileRef = E0E8370D1CC7D5590066B154 /* death.wav */; };
 		E0E837131CC7D5590066B154 /* heart.wav in Resources */ = {isa = PBXBuildFile; fileRef = E0E8370E1CC7D5590066B154 /* heart.wav */; };
 		E0E837141CC7D5590066B154 /* skull.wav in Resources */ = {isa = PBXBuildFile; fileRef = E0E8370F1CC7D5590066B154 /* skull.wav */; };
+		E0E837161CC7D5AF0066B154 /* GameAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E837151CC7D5AF0066B154 /* GameAudio.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		E0E8370D1CC7D5590066B154 /* death.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = death.wav; sourceTree = "<group>"; };
 		E0E8370E1CC7D5590066B154 /* heart.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = heart.wav; sourceTree = "<group>"; };
 		E0E8370F1CC7D5590066B154 /* skull.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = skull.wav; sourceTree = "<group>"; };
+		E0E837151CC7D5AF0066B154 /* GameAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameAudio.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				E0E837011CC41D440066B154 /* Info.plist */,
 				E0E837071CC44F1E0066B154 /* DragImg.swift */,
 				E0E837091CC45A7E0066B154 /* MonsterImg.swift */,
+				E0E837151CC7D5AF0066B154 /* GameAudio.swift */,
 			);
 			path = "my-little-monster";
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				E0E8370A1CC45A7E0066B154 /* MonsterImg.swift in Sources */,
 				E0E837081CC44F1E0066B154 /* DragImg.swift in Sources */,
 				E0E836F81CC41D440066B154 /* ViewController.swift in Sources */,
+				E0E837161CC7D5AF0066B154 /* GameAudio.swift in Sources */,
 				E0E836F61CC41D440066B154 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
