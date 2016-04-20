@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     var timer: NSTimer!
     var monsterHappy = false
     var gameAudio: GameAudio!
+    var currentItem: UInt32 = 0
     
     var actualPenalties = 0
     
@@ -50,6 +51,11 @@ class ViewController: UIViewController {
         heart.alpha = DIM_ALPHA
         food.userInteractionEnabled = false
         heart.userInteractionEnabled = false
+        if currentItem == 0 {
+            gameAudio.playHeartSound()
+        } else {
+            gameAudio.playBiteSound()
+        }
     }
     
     func startTimer() {
@@ -64,7 +70,7 @@ class ViewController: UIViewController {
         
         if !monsterHappy {
             actualPenalties += 1
-        
+            gameAudio.playSkullSound()
             if actualPenalties == 1 {
                 skull1.alpha = OPAQUE
             } else if actualPenalties == 2 {
@@ -77,24 +83,22 @@ class ViewController: UIViewController {
                 skull2.alpha = DIM_ALPHA
                 skull3.alpha = DIM_ALPHA
             }
-        }
-        
-        let rand = arc4random_uniform(2)
-        
-        if rand == 0 {
-            food.alpha = DIM_ALPHA
-            food.userInteractionEnabled = false
-            heart.alpha = OPAQUE
-            heart.userInteractionEnabled = true
         } else {
-            heart.alpha = DIM_ALPHA
-            heart.userInteractionEnabled = false
-            food.alpha = OPAQUE
-            food.userInteractionEnabled = true
+            let rand = arc4random_uniform(2)
+            if rand == 0 {
+                food.alpha = DIM_ALPHA
+                food.userInteractionEnabled = false
+                heart.alpha = OPAQUE
+                heart.userInteractionEnabled = true
+            } else {
+                heart.alpha = DIM_ALPHA
+                heart.userInteractionEnabled = false
+                food.alpha = OPAQUE
+                food.userInteractionEnabled = true
+            }
+            monsterHappy = false
+            currentItem = rand
         }
-        
-        monsterHappy = false
-        
     }
     
     func gameOver() {
@@ -102,6 +106,7 @@ class ViewController: UIViewController {
         heart.alpha = DIM_ALPHA
         food.alpha = DIM_ALPHA
         monsterImg.playDeathAnimation()
+        gameAudio.playDeathSound()
     }
     
     
