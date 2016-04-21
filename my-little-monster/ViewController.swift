@@ -47,8 +47,8 @@ class ViewController: UIViewController {
         startTimer()
     }
 
-    @IBAction func onRestartPressed(sender: AnyObject) {
-        
+    @IBAction func onRestartPressed(send: AnyObject) {
+        //when pressed go back to InitialViewController
     }
     
     override func viewDidLoad() {
