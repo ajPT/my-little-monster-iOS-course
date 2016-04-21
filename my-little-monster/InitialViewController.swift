@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 class InitialViewController: UIViewController {
+    
+    var character = ""
 
     @IBAction func doStuff(sender: AnyObject) {
         
@@ -25,6 +27,13 @@ class InitialViewController: UIViewController {
         //nothing goes here
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "showMonster") {
+            let svc = segue.destinationViewController as! ViewController;
+            svc.choosenCharacter = "Digglet"
+            
+        }
+    }
 
     
 }

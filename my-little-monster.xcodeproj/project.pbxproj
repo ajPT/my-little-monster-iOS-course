@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E040EC6B1CC7F33A00020225 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E040EC6A1CC7F33A00020225 /* InitialViewController.swift */; };
+		E040EC6D1CC95ED200020225 /* zephyrea.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E040EC6C1CC95ED100020225 /* zephyrea.ttf */; };
 		E0E836F61CC41D440066B154 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E836F51CC41D440066B154 /* AppDelegate.swift */; };
 		E0E836F81CC41D440066B154 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E836F71CC41D440066B154 /* ViewController.swift */; };
 		E0E836FB1CC41D440066B154 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0E836F91CC41D440066B154 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		E040EC6A1CC7F33A00020225 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		E040EC6C1CC95ED100020225 /* zephyrea.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = zephyrea.ttf; sourceTree = "<group>"; };
 		E0E836F21CC41D440066B154 /* my-little-monster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "my-little-monster.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0E836F51CC41D440066B154 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0E836F71CC41D440066B154 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 		E0E836F41CC41D440066B154 /* my-little-monster */ = {
 			isa = PBXGroup;
 			children = (
+				E040EC6C1CC95ED100020225 /* zephyrea.ttf */,
 				E0E8370B1CC7D5590066B154 /* bite.wav */,
 				E0E8370C1CC7D5590066B154 /* cave-music.mp3 */,
 				E0E8370D1CC7D5590066B154 /* death.wav */,
@@ -156,6 +159,7 @@
 				E0E837111CC7D5590066B154 /* cave-music.mp3 in Resources */,
 				E0E837001CC41D440066B154 /* LaunchScreen.storyboard in Resources */,
 				E0E836FD1CC41D440066B154 /* Assets.xcassets in Resources */,
+				E040EC6D1CC95ED200020225 /* zephyrea.ttf in Resources */,
 				E0E836FB1CC41D440066B154 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

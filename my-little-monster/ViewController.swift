@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     var gameAudio: GameAudio!
     var currentItem: UInt32 = 0
     var actualPenalties = 0
+    var choosenCharacter = "Digglet"
 
     @IBOutlet weak var monsterImg: MonsterImg!
     @IBOutlet weak var heart: DragImg!
@@ -28,6 +29,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var restartBtn: UIButton!
     @IBOutlet weak var reanimateLbl: UILabel!
     @IBOutlet weak var restartLbl: UILabel!
+    @IBOutlet weak var backgroundImg: UIImageView!
+    
     
     @IBAction func onReanimatePressed(sender: AnyObject) {
         food.hidden = false
@@ -39,7 +42,13 @@ class ViewController: UIViewController {
         skull1.alpha = DIM_ALPHA
         skull2.alpha = DIM_ALPHA
         skull3.alpha = DIM_ALPHA
-        monsterImg.playIdleAnimation ()
+        
+        if choosenCharacter == "Golem" {
+            monsterImg.playIdleAnimationGolem ()
+        } else if choosenCharacter == "Digglet" {
+            monsterImg.playIdleAnimationDigglet()
+        }
+            
         gameAudio.playCaveMusicSound()
         actualPenalties = 0
         currentItem = 0
@@ -53,6 +62,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        createScenario()
         
         gameAudio = GameAudio()
         gameAudio.playCaveMusicSound()
@@ -141,10 +152,24 @@ class ViewController: UIViewController {
         restartLbl.hidden = false
         //heart.alpha = DIM_ALPHA
         //food.alpha = DIM_ALPHA
-        monsterImg.playDeathAnimation()
+        if choosenCharacter == "Golem" {
+            monsterImg.playDeathAnimationGolem()
+        } else if choosenCharacter == "Digglet" {
+            monsterImg.playDeathAnimationDigglet()
+        }
+        
         gameAudio.playDeathSound()
     }
     
+    func createScenario() {
+        if choosenCharacter == "Golem" {
+            monsterImg.playIdleAnimationGolem ()
+            backgroundImg.image = UIImage(named: "bg")
+        } else if choosenCharacter == "Digglet" {
+            monsterImg.playIdleAnimationDigglet()
+            backgroundImg.image = UIImage(named: "bg2")
+        }
+    }
 
 
 }

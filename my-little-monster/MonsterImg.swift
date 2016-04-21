@@ -17,10 +17,10 @@ class MonsterImg: UIImageView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        playIdleAnimation()
+        //playIdleAnimationGolem()
     }
     
-    func playIdleAnimation () {
+    func playIdleAnimationGolem () {
         self.image = UIImage(named: "idle (1)")
         
         self.animationImages = nil
@@ -38,7 +38,7 @@ class MonsterImg: UIImageView {
         self.startAnimating()
     }
     
-    func playDeathAnimation() {
+    func playDeathAnimationGolem() {
     
         self.image = UIImage(named: "dead5")
         self.animationImages = nil
@@ -55,5 +55,42 @@ class MonsterImg: UIImageView {
         self.animationRepeatCount = 1
         self.startAnimating()
     }
+    
+    func playIdleAnimationDigglet () {
+    self.image = UIImage(named: "idle2 (1)")
+    
+    self.animationImages = nil
+    
+    var imgArray = [UIImage]()
+    
+    for index in 1...4 {
+    let img = UIImage(named: "idle2 (\(index))")
+    imgArray.append(img!)
+    }
+    
+    self.animationImages = imgArray
+    self.animationDuration = 0.8
+    self.animationRepeatCount = 0
+    self.startAnimating()
+    }
+    
+    func playDeathAnimationDigglet() {
+        
+        self.image = UIImage(named: "hide (6)")
+        self.animationImages = nil
+        
+        var imgArray = [UIImage]()
+        
+        for index in 1...6 {
+            let img = UIImage(named: "hide (\(index))")
+            imgArray.append(img!)
+        }
+        
+        self.animationImages = imgArray
+        self.animationDuration = 0.8
+        self.animationRepeatCount = 1
+        self.startAnimating()
+    }
+
 
 }
