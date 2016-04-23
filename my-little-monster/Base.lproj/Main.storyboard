@@ -71,8 +71,8 @@
                                     <rect key="frame" x="178" y="372" width="44" height="26"/>
                                 </variation>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Z8g-Eh-nht">
-                                <rect key="frame" x="0.0" y="20" width="560" height="158"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Z8g-Eh-nht">
+                                <rect key="frame" x="0.0" y="20" width="560" height="188"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my_gigapet" translatesAutoresizingMaskIntoConstraints="NO" id="6Jp-Dw-gE1">
                                         <rect key="frame" x="56" y="0.0" width="448" height="118"/>
@@ -91,7 +91,7 @@
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Select-your-character-2" translatesAutoresizingMaskIntoConstraints="NO" id="vEp-wm-HKB">
-                                        <rect key="frame" x="169" y="118" width="222" height="40"/>
+                                        <rect key="frame" x="169" y="148" width="222" height="40"/>
                                         <variation key="heightClass=compact" misplaced="YES">
                                             <rect key="frame" x="169" y="188" width="222" height="40"/>
                                         </variation>
@@ -271,6 +271,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="backgroundImg" destination="2AU-Q3-GLR" id="JDm-5y-EIb"/>
                         <outlet property="beginBtn" destination="erq-eC-dDW" id="75Z-id-AN9"/>
                         <outlet property="beginLbl" destination="Xyv-Sa-ImH" id="cMp-OM-u1w"/>
                         <outlet property="diggletBtn" destination="36H-ds-6F1" id="c8a-kz-CLN"/>
@@ -297,6 +298,13 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="yWq-LY-B8l">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="idle (1)" translatesAutoresizingMaskIntoConstraints="NO" id="oNc-c9-xdB" customClass="MonsterImg" customModule="my_little_monster" customModuleProvider="target">
+                                <rect key="frame" x="89" y="264" width="423" height="282"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="282" id="sIM-v8-C5B"/>
+                                    <constraint firstAttribute="width" constant="423" id="xng-NN-lpO"/>
+                                </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ground" translatesAutoresizingMaskIntoConstraints="NO" id="bGc-yE-Oqg">
                                 <rect key="frame" x="0.0" y="540" width="600" height="60"/>
@@ -337,25 +345,6 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" distribution="fillEqually" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="hUd-YG-HSK">
-                                <rect key="frame" x="155" y="109" width="290" height="98"/>
-                                <subviews>
-                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="zDI-0K-bfr" customClass="DragImg" customModule="my_little_monster" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="95" height="98"/>
-                                    </imageView>
-                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="LGM-PW-rem" customClass="DragImg" customModule="my_little_monster" customModuleProvider="target">
-                                        <rect key="frame" x="195" y="0.0" width="95" height="98"/>
-                                    </imageView>
-                                </subviews>
-                                <variation key="heightClass=compact" axis="vertical" spacing="50"/>
-                            </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="idle (1)" translatesAutoresizingMaskIntoConstraints="NO" id="oNc-c9-xdB" customClass="MonsterImg" customModule="my_little_monster" customModuleProvider="target">
-                                <rect key="frame" x="89" y="264" width="423" height="282"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="282" id="sIM-v8-C5B"/>
-                                    <constraint firstAttribute="width" constant="423" id="xng-NN-lpO"/>
-                                </constraints>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bBx-Pl-map">
                                 <rect key="frame" x="214" y="116" width="173" height="146"/>
                                 <subviews>
@@ -402,6 +391,18 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" distribution="fillEqually" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="hUd-YG-HSK">
+                                <rect key="frame" x="155" y="109" width="290" height="98"/>
+                                <subviews>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="zDI-0K-bfr" customClass="DragImg" customModule="my_little_monster" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="95" height="98"/>
+                                    </imageView>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="LGM-PW-rem" customClass="DragImg" customModule="my_little_monster" customModuleProvider="target">
+                                        <rect key="frame" x="195" y="0.0" width="95" height="98"/>
+                                    </imageView>
+                                </subviews>
+                                <variation key="heightClass=compact" axis="vertical" spacing="50"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>

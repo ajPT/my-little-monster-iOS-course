@@ -18,6 +18,7 @@ class InitialViewController: UIViewController {
     @IBOutlet weak var beginBtn: UIButton!
     @IBOutlet weak var diggletBtn: UIButton!
     @IBOutlet weak var golemBtn: UIButton!
+    @IBOutlet weak var backgroundImg: UIImageView!
 
     @IBAction func onDiggletPressed(sender: AnyObject) {
         character = "Digglet"
@@ -25,6 +26,7 @@ class InitialViewController: UIViewController {
         selectCharLbl.hidden = true
         beginBtn.hidden = false
         beginLbl.hidden = false
+        backgroundImg.image = UIImage(named: "bg2")
     }
     
     @IBAction func onGolemPressed(sender: AnyObject) {
@@ -33,6 +35,7 @@ class InitialViewController: UIViewController {
         selectCharLbl.hidden = true
         beginBtn.hidden = false
         beginLbl.hidden = false
+        backgroundImg.image = UIImage(named: "bg")
     }
     
     @IBAction func onBeginPressed(sender: AnyObject) {
@@ -63,6 +66,7 @@ class InitialViewController: UIViewController {
         selectCharLbl.hidden = false
         beginBtn.hidden = true
         beginLbl.hidden = true
+        backgroundImg.image = UIImage(named: "bg2")
     }
 
     
