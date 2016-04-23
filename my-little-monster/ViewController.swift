@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     var gameAudio: GameAudio!
     var currentItem: UInt32 = 0
     var actualPenalties = 0
-    var choosenCharacter = "Digglet"
+    var choosenCharacter: String!
 
     @IBOutlet weak var monsterImg: MonsterImg!
     @IBOutlet weak var heart: DragImg!
@@ -33,23 +33,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func onReanimatePressed(sender: AnyObject) {
-        food.hidden = false
-        heart.hidden = false
-        reanimateBtn.hidden = true
-        reanimateLbl.hidden = true
-        restartBtn.hidden = true
-        restartLbl.hidden = true
-        skull1.alpha = DIM_ALPHA
-        skull2.alpha = DIM_ALPHA
-        skull3.alpha = DIM_ALPHA
-        
-        if choosenCharacter == "Golem" {
-            monsterImg.playIdleAnimationGolem ()
-        } else if choosenCharacter == "Digglet" {
-            monsterImg.playIdleAnimationDigglet()
-        }
-            
-        gameAudio.playCaveMusicSound()
+        createScenario()
         actualPenalties = 0
         currentItem = 0
         monsterHappy = false
@@ -63,22 +47,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        createScenario()
-        
         gameAudio = GameAudio()
-        gameAudio.playCaveMusicSound()
+        
+        createScenario()
         
         food.dropTarget = monsterImg
         heart.dropTarget = monsterImg
-        
-        reanimateBtn.hidden = true
-        reanimateLbl.hidden = true
-        restartBtn.hidden = true
-        restartLbl.hidden = true
-        
-        skull1.alpha = DIM_ALPHA
-        skull2.alpha = DIM_ALPHA
-        skull3.alpha = DIM_ALPHA
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.itemDroppedOnTarget), name: "onTargetDropped", object: nil)
         
@@ -150,14 +124,11 @@ class ViewController: UIViewController {
         reanimateLbl.hidden = false
         restartBtn.hidden = false
         restartLbl.hidden = false
-        //heart.alpha = DIM_ALPHA
-        //food.alpha = DIM_ALPHA
         if choosenCharacter == "Golem" {
             monsterImg.playDeathAnimationGolem()
         } else if choosenCharacter == "Digglet" {
             monsterImg.playDeathAnimationDigglet()
         }
-        
         gameAudio.playDeathSound()
     }
     
@@ -169,8 +140,22 @@ class ViewController: UIViewController {
             monsterImg.playIdleAnimationDigglet()
             backgroundImg.image = UIImage(named: "bg2")
         }
+        
+        gameAudio.playCaveMusicSound()
+        
+        food.hidden = false
+        heart.hidden = false
+        
+        reanimateBtn.hidden = true
+        reanimateLbl.hidden = true
+        restartBtn.hidden = true
+        restartLbl.hidden = true
+        
+        skull1.alpha = DIM_ALPHA
+        skull2.alpha = DIM_ALPHA
+        skull3.alpha = DIM_ALPHA
+        
     }
-
 
 }
 

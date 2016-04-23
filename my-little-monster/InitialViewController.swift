@@ -13,26 +13,56 @@ class InitialViewController: UIViewController {
     
     var character = ""
 
-    @IBAction func doStuff(sender: AnyObject) {
-        
+    @IBOutlet weak var selectCharLbl: UIImageView!
+    @IBOutlet weak var beginLbl: UILabel!
+    @IBOutlet weak var beginBtn: UIButton!
+    @IBOutlet weak var diggletBtn: UIButton!
+    @IBOutlet weak var golemBtn: UIButton!
+
+    @IBAction func onDiggletPressed(sender: AnyObject) {
+        character = "Digglet"
+        golemBtn.hidden = true
+        selectCharLbl.hidden = true
+        beginBtn.hidden = false
+        beginLbl.hidden = false
+    }
+    
+    @IBAction func onGolemPressed(sender: AnyObject) {
+        character = "Golem"
+        diggletBtn.hidden = true
+        selectCharLbl.hidden = true
+        beginBtn.hidden = false
+        beginLbl.hidden = false
+    }
+    
+    @IBAction func onBeginPressed(sender: AnyObject) {
         performSegueWithIdentifier("showMonster", sender: self)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        showInitialScreen()
     }
     
     @IBAction func unwindToInitialViewController(segue: UIStoryboardSegue) {
-        //nothing goes here
+        showInitialScreen()
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "showMonster") {
             let svc = segue.destinationViewController as! ViewController;
-            svc.choosenCharacter = "Digglet"
+            svc.choosenCharacter = character
             
         }
+    }
+    
+    func showInitialScreen() {
+        character = ""
+        diggletBtn.hidden = false
+        golemBtn.hidden = false
+        selectCharLbl.hidden = false
+        beginBtn.hidden = true
+        beginLbl.hidden = true
     }
 
     

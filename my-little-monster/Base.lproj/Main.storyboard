@@ -53,7 +53,7 @@
                                     <rect key="frame" x="94" y="346" width="212" height="78"/>
                                 </variation>
                                 <connections>
-                                    <action selector="doStuff:" destination="Nf3-nz-rwp" eventType="touchUpInside" id="7A4-g8-57c"/>
+                                    <action selector="onBeginPressed:" destination="Nf3-nz-rwp" eventType="touchUpInside" id="ht9-oC-ML1"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Begin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xyv-Sa-ImH">
@@ -125,6 +125,9 @@
                                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                                     <rect key="frame" x="0.0" y="0.0" width="200" height="230"/>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="onGolemPressed:" destination="Nf3-nz-rwp" eventType="touchUpInside" id="Jme-in-Lxv"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36H-ds-6F1">
                                                 <rect key="frame" x="271" y="0.0" width="271" height="260"/>
@@ -138,6 +141,9 @@
                                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                                     <rect key="frame" x="200" y="0.0" width="200" height="230"/>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="onDiggletPressed:" destination="Nf3-nz-rwp" eventType="touchUpInside" id="EFK-cQ-xQS"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -265,6 +271,11 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="beginBtn" destination="erq-eC-dDW" id="75Z-id-AN9"/>
+                        <outlet property="beginLbl" destination="Xyv-Sa-ImH" id="cMp-OM-u1w"/>
+                        <outlet property="diggletBtn" destination="36H-ds-6F1" id="c8a-kz-CLN"/>
+                        <outlet property="golemBtn" destination="ZXA-pK-EfN" id="O1P-tQ-xrj"/>
+                        <outlet property="selectCharLbl" destination="vEp-wm-HKB" id="n5F-rh-EvF"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="showMonster" id="32e-aN-dhw"/>
                     </connections>
                 </viewController>
