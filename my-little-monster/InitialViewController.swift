@@ -55,7 +55,6 @@ class InitialViewController: UIViewController {
         if (segue.identifier == "showMonster") {
             let svc = segue.destinationViewController as! ViewController;
             svc.choosenCharacter = character
-            
         }
     }
     
@@ -68,6 +67,5 @@ class InitialViewController: UIViewController {
         beginLbl.hidden = true
         backgroundImg.image = UIImage(named: "bg2")
     }
-
     
 }

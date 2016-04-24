@@ -154,8 +154,6 @@ class ViewController: UIViewController {
         skull1.alpha = DIM_ALPHA
         skull2.alpha = DIM_ALPHA
         skull3.alpha = DIM_ALPHA
-        
     }
 
 }
-
