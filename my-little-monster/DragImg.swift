@@ -35,9 +35,16 @@ class DragImg: UIImageView {
 
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if let touch = touches.first, let target = dropTarget {
-            //let position = touch.locationInView(self.superview)
-            let position = touch.locationInView(touch.view!.window)
-            if CGRectContainsPoint(target.frame, position)  {
+            //let position = touch.locationInView(self.superview) -> doesn't work in landscape
+            //OPTION 1:
+//            let position = touch.locationInView(touch.view!.window)
+//            if CGRectContainsPoint(target.frame, position)  {
+//                let notif = NSNotification(name: "onTargetDropped", object: nil)
+//                NSNotificationCenter.defaultCenter().postNotification(notif)
+//            }
+            //OPTION 2:
+            let position = touch.locationInView(target)
+            if target.pointInside(position, withEvent: event) {
                 let notif = NSNotification(name: "onTargetDropped", object: nil)
                 NSNotificationCenter.defaultCenter().postNotification(notif)
             }
